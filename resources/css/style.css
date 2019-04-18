@@ -1,4 +1,15 @@
+#container {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
 canvas {
-    height: 500px;
-    width: 500px;
+    /* height: 500px; */
+    /* width: 500px; */
+    height: 100%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
