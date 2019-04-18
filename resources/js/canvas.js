@@ -1,6 +1,7 @@
-function initCanvas() {
-    var canvasDiv = document.getElementById('mainCanvas');
+var context;
 
+function initCanvas() {
+    context = document.getElementById('mainCanvas').getContext("2d");
 }
 
 initCanvas();
