@@ -2,7 +2,11 @@ var canvas;
 var context;
 
 function initCanvas() {
-    context = document.getElementById("mainCanvas").getContext("2d");
+    canvas = document.getElementById("mainCanvas")
+    canvas.width = 750;
+    canvas.height = 750;
+
+    context = canvas.getContext("2d");
     $("#mainCanvas").mousedown(function(e){
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
@@ -12,7 +16,10 @@ function initCanvas() {
 }
 
 function drawPixel(x, y) {
+    console.log("X: " + x + "     Y: " + y);
 
+    context.fillStyle = "#000000";
+    context.fillRect(x, y, 25, 25);
 }
 
 initCanvas();
