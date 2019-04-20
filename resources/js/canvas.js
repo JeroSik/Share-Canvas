@@ -10,16 +10,26 @@ function initCanvas() {
     $("#mainCanvas").mousedown(function(e){
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
-              
+
         drawPixel(mouseX, mouseY);
     });
 }
 
 function drawPixel(x, y) {
-    console.log("X: " + x + "     Y: " + y);
+    pixelCords = getPixelCord(x, y);
 
+    console.log("Old X: " + x + "     Old Y: " + y);
+    console.log("Old X: " + pixelCords[0] + "     Old Y: " + pixelCords[1]);
+    
     context.fillStyle = "#000000";
-    context.fillRect(x, y, 25, 25);
+    context.fillRect(pixelCords[0], pixelCords[1], 5, 5);
+}
+
+function getPixelCord(x, y) {
+    var pixelX = Math.round(x / 5) * 5;
+    var pixelY = Math.round(y / 5) * 5;
+
+    return [pixelX, pixelY];
 }
 
 initCanvas();
