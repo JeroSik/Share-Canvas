@@ -19,7 +19,7 @@ function drawPixel(x, y) {
     pixelCords = getPixelCord(x, y);
 
     console.log("Old X: " + x + "     Old Y: " + y);
-    console.log("Old X: " + pixelCords[0] + "     Old Y: " + pixelCords[1]);
+    console.log("New X: " + pixelCords[0] + "     New Y: " + pixelCords[1]);
     
     context.fillStyle = "#000000";
     context.fillRect(pixelCords[0], pixelCords[1], 5, 5);
