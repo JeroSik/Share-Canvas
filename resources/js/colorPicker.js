@@ -12,7 +12,7 @@ function startup() {
 }
 
 function updateFirst(event) {
-    console.log(event.target.value);
+    console.log("New Color: " + event.target.value);
     pixelColor = event.target.value;
 }
 
