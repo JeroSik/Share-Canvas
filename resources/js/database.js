@@ -28,7 +28,7 @@ function addPixel(pixel) {
 }
 
 function updatePixel(pixel) {
-    var pixelRef = db.collection("pixels").doc("pixel.id");
+    var pixelRef = db.collection("pixels").doc(pixel.id);
 
     // Set the "capital" field of the city 'DC'
     return pixelRef.update({
@@ -43,12 +43,15 @@ function updatePixel(pixel) {
 }
 
 function readPixels() {
-    pixelMap = [];
+    pixelIDMap = [];
 
     db.collection("pixels").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             pixelData = doc.data();
-            pixelMap.push(pixelData);
+            pixelIDMap.push(doc.id);
+
+            context.fillStyle = pixelData.color;
+            context.fillRect(pixelData.x, pixelData.y, 5, 5);
         });
     });
 }

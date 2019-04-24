@@ -28,14 +28,10 @@ function drawCanvas(x, y) {
     splitPixels(pixelCords[0], pixelCords[1], pixelColor, pixelSize);
 }
 
-function redrawCanvas() {
-    console.log("")
-}
-
 function updateCanvas() {
-    redrawCanvas();
-    setInterval(redrawCanvas, 5000);
+    readPixels();
+    // setInterval(redrawCanvas, 5000);
 }
 
 initCanvas();
-// updateCanvas();
+updateCanvas();
