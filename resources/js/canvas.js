@@ -27,13 +27,10 @@ function initCanvas() {
 function drawPixel(x, y) {
     pixelCords = getPixelCord(x, y);
 
-    // console.log("Old X: " + x + "     Old Y: " + y);
-    // console.log("New X: " + pixelCords[0] + "     New Y: " + pixelCords[1]);
-    
     context.fillStyle = pixelColor;
     context.fillRect(pixelCords[0], pixelCords[1], 5, 5);
 
-    addPixel(pixelCords[0], pixelCords[1], pixelColor)
+    // addPixel(pixelCords[0], pixelCords[1], pixelColor)
 }
 
 function getPixelCord(x, y) {
@@ -52,4 +49,4 @@ function redraw(){
 }
 
 initCanvas();
-setInterval(updateCanvas, 5000);
+// setInterval(updateCanvas, 5000);
