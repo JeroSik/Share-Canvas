@@ -36,7 +36,7 @@ function getPixelCord(x, y) {
 }
 
 function updateCanvas() {
-
+    readPixels();
 }
 
 initCanvas();

@@ -32,8 +32,11 @@ function addPixel(x_cord, y_cord, colorHex) {
 function readPixels() {
     db.collection("pixels").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+            pixelData = doc.data();
+            // console.log(doc.id, " => ", doc.data());
+
+            context.fillStyle = pixelData.color;
+            context.fillRect(pixelData.x, pixelData.y, 5, 5);
         });
     });
 }
