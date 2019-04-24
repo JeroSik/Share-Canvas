@@ -6,36 +6,28 @@
         <meta name="description" content="CS252 Lab 6">
         <meta name="authors" content="Vivian Guo and Youngsik Yoon">
         <title>Share Canvas</title>
-        <link rel="stylesheet" href="index.css">
-        <style>
-            body{}
-        </style>
     </head>
     <body>
-        <div id="header">
+        <!-- Header -->
+        <div id="header" class="row">
             <h1 id="title">Share Canvas</h1>
         </div>
+        
+        <!-- Main -->
         <div id="container" class="row">
-            <div class="column" id="canvas">
-            <p align="center">
+            <div class="column" id="canvas" align="center">
                 <canvas id="mainCanvas"></canvas>
-            </p>
             </div>
-            <div class="column" id="options">
+            <div class="column" id="options2">
                 <table>
                     <tr>
                         <th><h2>Choose Color:</h2></th>
                         <td><input type="color" value="#000000" id="colorWell"></td>
-                    </tr> 
+                    </tr>
                 </table>
-                <div class="button-container">
-                        <a href="#" class="button" onclick="clear()">
-                          Clear
-                        </a>
-                </div>
             </div>
         </div>
-
+        
         <!-- Get required js files -->
         <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
         <script type="text/javascript" src=resources/js/database.js></script>
@@ -44,6 +36,7 @@
         <script type="text/javascript" src=resources/js/colorPicker.js></script>
         
         <!-- Get required css files -->
+        <link rel="stylesheet" href="resources/css/index.css">
         <link rel="stylesheet" href="resources/css/style.css"> 
     </body>
 </html>
