@@ -1,11 +1,6 @@
 var canvas;
 var context;
 var pixelColor;
-var curTool;
-var clickX = new Array();
-var clickY = new Array();
-var clickDrag = new Array();
-var on;
 
 function initCanvas() {
     canvas = document.getElementById("mainCanvas")
@@ -13,10 +8,8 @@ function initCanvas() {
     canvas.height = 600;
 
     context = canvas.getContext("2d");
-    curTool = 'pixel'
 
     $("#mainCanvas").mousedown(function(e){
-        on = true;
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
 
@@ -26,11 +19,14 @@ function initCanvas() {
 
 function drawPixel(x, y) {
     pixelCords = getPixelCord(x, y);
+    pixelSize = getPixelSize();
+
+    console.log(pixelSize)
 
     context.fillStyle = pixelColor;
-    context.fillRect(pixelCords[0], pixelCords[1], 5, 5);
+    context.fillRect(pixelCords[0], pixelCords[1], pixelSize, pixelSize);
 
-    // addPixel(pixelCords[0], pixelCords[1], pixelColor)
+    addPixel(pixelCords[0], pixelCords[1], pixelColor)
 }
 
 function getPixelCord(x, y) {
@@ -40,13 +36,23 @@ function getPixelCord(x, y) {
     return [pixelX, pixelY];
 }
 
-function updateCanvas() {
-    readPixels();
+function getPixelSize() {
+    var sizeValue = document.getElementById('sizeList').value;
+    if (sizeValue == "small") {
+        return 5;
+    } else if (sizeValue == "normal") {
+        return 10;
+    } else if (sizeValue == "large") {
+        return 25;
+    } else if (sizeValue == "exLarge") {
+        return 50;
+    }
 }
 
-function redraw(){
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+function updateCanvas() {
+    readPixels();
+    setInterval(readPixels, 5000);
 }
 
 initCanvas();
-// setInterval(updateCanvas, 5000);
+updateCanvas();
