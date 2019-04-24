@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext);
+ body {
+	 background: url('http://thecodeplayer.com/uploads/media/geometry.png');
+	 font-family: 'Ubuntu', sans-serif;
+}
+ a {
+	 text-decoration: none;
+	 color: #4f4f4f;
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 2px grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 400%;
+    color: black;
+    align-content: center;
+    margin-left: -50px;
+}
+#colorWell{
+  height: 50px;
+  width: 80px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+table{
+    width: 40%;
+}
+th{
+    width: 300px;
+    padding: 30px;
+}
+h2{
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+}
+.column {
+    float: left;
+    display: inline-block;
+    justify-content: center;
+}
+#canvas{
+    margin-left: 10%;
+    width: 70%;    
+}
+#options{
+    width: 20%;
+    margin-left: -10%    
+}
+@media all and (max-width: 100px) {
+    .navigation {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+ 

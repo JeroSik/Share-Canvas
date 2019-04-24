@@ -1,19 +1,50 @@
 var canvas;
 var context;
 var pixelColor;
+var curTool;
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag = new Array();
+var on;
 
 function initCanvas() {
     canvas = document.getElementById("mainCanvas")
-    canvas.width = 750;
-    canvas.height = 750;
+    canvas.width = 600;
+    canvas.height = 600;
 
     context = canvas.getContext("2d");
+    curTool = 'pixel'
+
     $("#mainCanvas").mousedown(function(e){
+        on = true;
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
 
-        drawPixel(mouseX, mouseY);
+        if(curTool === 'pixel'){
+            drawPixel(mouseX, mouseY);
+        }else if(curTool === 'paint'){
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false);
+            redraw();
+        }
     });
+    $('#mainCanvas').mousemove(function(e){
+        if(on){
+          addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+          redraw();
+        }
+    });
+    $('#canvas').mouseup(function(e){
+        on = false;
+    });
+    $('#canvas').mouseleave(function(e){
+        on = false;
+    });
+}
+function addClick(x, y, dragging)
+{
+  clickX.push(x);
+  clickY.push(y);
+  clickDrag.push(dragging);
 }
 
 function drawPixel(x, y) {
@@ -37,6 +68,10 @@ function getPixelCord(x, y) {
 
 function updateCanvas() {
     readPixels();
+}
+
+function redraw(){
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 }
 
 initCanvas();
