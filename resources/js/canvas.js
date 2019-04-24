@@ -43,13 +43,6 @@ function getPixelCord(x, y) {
     return [pixelX, pixelY];
 }
 
-<<<<<<< HEAD
-function clear(){
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-}
-
-initCanvas();
-=======
 function updateCanvas() {
     readPixels();
 }
@@ -60,4 +53,3 @@ function redraw(){
 
 initCanvas();
 setInterval(updateCanvas, 5000);
->>>>>>> 05af8e027dfcfc8b547c182152e7f99398c231b6
