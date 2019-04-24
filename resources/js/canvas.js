@@ -20,6 +20,8 @@ function drawCanvas(x, y) {
     pixelCords = getPixelCord(x, y);
     pixelSize = getPixelSize();
 
+    console.log("Pixel Info: (" + pixelCords[0] + ", " + pixelCords[1] + "), " + pixelColor + ", " + pixelSize);
+
     context.fillStyle = pixelColor;
     context.fillRect(pixelCords[0], pixelCords[1], pixelSize, pixelSize);
 

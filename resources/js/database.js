@@ -13,20 +13,33 @@ var app = firebase.initializeApp(config);
 var db = firebase.firestore(app)
 
 function addPixel(pixel) {
-    console.log("Pixel Info: (" + x_cord + ", " + y_cord + "), " + colorHex + ", " + sizeVal);
-
     // Add a new document with a generated id.
-    db.collection("pixels").add({
-        color: colorHex,
-        size: sizeVal,
-        x: x_cord,
-        y: y_cord
+    db.collection("pixels").doc(pixel.id).set({
+        color: pixel.color,
+        x: pixel.x,
+        y: pixel.y
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
+    .then(function() {
+        console.log("Document successfully written!");
     })
     .catch(function(error) {
-        console.error("Error adding document: ", error);
+        console.error("Error writing document: ", error);
+    });
+}
+
+function updatePixel(pixel) {
+    var washingtonRef = db.collection("cities").doc("DC");
+
+    // Set the "capital" field of the city 'DC'
+    return washingtonRef.update({
+        capital: true
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
     });
 }
 

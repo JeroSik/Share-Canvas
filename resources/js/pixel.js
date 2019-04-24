@@ -1,6 +1,17 @@
 var pixelColor;
 var pixelMap = [];
 
+function makePixel(x_cord, y_cord, colorHex) {
+    pixelID = "(" + x_cord + "," + y_cord + ")";
+    
+    return {
+        id: pixelID,
+        x: x_cord,
+        y: y_cord,
+        color: colorHex
+    };
+}
+
 function getPixelCord(x, y) {
     var pixelX = Math.round(x / 5) * 5;
     var pixelY = Math.round(y / 5) * 5;
@@ -28,12 +39,4 @@ function splitPixels(x_cord, y_cord, colorHex, sizeVal) {
             addPixel(pixel);
         }
     } 
-}
-
-function makePixel(x_cord, y_cord, colorHex) {
-    return {
-        x: x_cord,
-        y: y_cord,
-        color: colorHex
-    };
 }
