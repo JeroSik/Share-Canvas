@@ -33,6 +33,12 @@ function initCanvas() {
           redraw();
         }
     });
+    $('#canvas').mouseup(function(e){
+        on = false;
+    });
+    $('#canvas').mouseleave(function(e){
+        on = false;
+    });
 }
 function addClick(x, y, dragging)
 {
