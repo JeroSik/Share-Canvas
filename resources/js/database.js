@@ -28,3 +28,7 @@ function addPixel(x_cord, y_cord, colorHex) {
         console.error("Error adding document: ", error);
     });
 }
+
+function readPixels() {
+
+}

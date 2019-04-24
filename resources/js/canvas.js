@@ -35,4 +35,9 @@ function getPixelCord(x, y) {
     return [pixelX, pixelY];
 }
 
+function updateCanvas() {
+
+}
+
 initCanvas();
+setInterval(updateCanvas, 5000);
