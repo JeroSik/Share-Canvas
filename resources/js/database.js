@@ -12,12 +12,13 @@ var app = firebase.initializeApp(config);
 
 var db = firebase.firestore(app)
 
-function addPixel(x_cord, y_cord, colorHex) {
-    console.log("Pixel Info: (" + x_cord + ", " + y_cord + ") " + colorHex);
+function addPixel(x_cord, y_cord, colorHex, sizeVal) {
+    console.log("Pixel Info: (" + x_cord + ", " + y_cord + "), " + colorHex + ", " + sizeVal);
 
     // Add a new document with a generated id.
     db.collection("pixels").add({
         color: colorHex,
+        size: sizeVal,
         x: x_cord,
         y: y_cord
     })
@@ -30,13 +31,12 @@ function addPixel(x_cord, y_cord, colorHex) {
 }
 
 function readPixels() {
+    pixelMap = [];
+
     db.collection("pixels").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             pixelData = doc.data();
-            // console.log(doc.id, " => ", doc.data());
-
-            context.fillStyle = pixelData.color;
-            context.fillRect(pixelData.x, pixelData.y, 5, 5);
+            pixelMap.push(pixelData);
         });
     });
 }
