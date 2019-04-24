@@ -26,7 +26,7 @@ function drawPixel(x, y) {
     context.fillStyle = pixelColor;
     context.fillRect(pixelCords[0], pixelCords[1], pixelSize, pixelSize);
 
-    addPixel(pixelCords[0], pixelCords[1], pixelColor)
+    addPixel(pixelCords[0], pixelCords[1], pixelColor, pixelSize);
 }
 
 function getPixelCord(x, y) {
@@ -55,4 +55,4 @@ function updateCanvas() {
 }
 
 initCanvas();
-updateCanvas();
+// updateCanvas();
