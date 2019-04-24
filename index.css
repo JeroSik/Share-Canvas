@@ -32,12 +32,21 @@ h2{
 }
 .column {
     float: left;
+    display: inline-block;
+    justify-content: center;
 }
 #canvas{
-    width: 75%
+    margin-left: 10%;
+    width: 70%
     
 }
 #options{
     width: 20%;
-    margin-left: -300px;
+    margin-left: -10%    
 }
+@media all and (max-width: 100px) {
+    .navigation {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
