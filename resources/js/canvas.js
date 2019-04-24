@@ -20,31 +20,8 @@ function initCanvas() {
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
 
-        if(curTool === 'pixel'){
-            drawPixel(mouseX, mouseY);
-        }else if(curTool === 'paint'){
-            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false);
-            redraw();
-        }
+        drawPixel(mouseX, mouseY);
     });
-    $('#mainCanvas').mousemove(function(e){
-        if(on){
-          addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-          redraw();
-        }
-    });
-    $('#canvas').mouseup(function(e){
-        on = false;
-    });
-    $('#canvas').mouseleave(function(e){
-        on = false;
-    });
-}
-function addClick(x, y, dragging)
-{
-  clickX.push(x);
-  clickY.push(y);
-  clickDrag.push(dragging);
 }
 
 function drawPixel(x, y) {
@@ -64,13 +41,8 @@ function getPixelCord(x, y) {
     return [pixelX, pixelY];
 }
 
-function redraw(){
-    clear()
-}
-
 function clear(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 }
-
 
 initCanvas();
