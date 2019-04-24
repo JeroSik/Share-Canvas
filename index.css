@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext);
+ body {
+	 background: url('http://thecodeplayer.com/uploads/media/geometry.png');
+	 font-family: 'Ubuntu', sans-serif;
+}
+ a {
+	 text-decoration: none;
+	 color: #4f4f4f;
+}
+
 h1{
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -37,8 +47,7 @@ h2{
 }
 #canvas{
     margin-left: 10%;
-    width: 70%
-    
+    width: 70%;    
 }
 #options{
     width: 20%;
@@ -50,3 +59,4 @@ h2{
       flex-direction: column;
     }
   }
+ 

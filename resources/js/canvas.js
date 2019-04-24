@@ -64,4 +64,9 @@ function getPixelCord(x, y) {
     return [pixelX, pixelY];
 }
 
+function redraw(){
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+}
+
+
 initCanvas();
