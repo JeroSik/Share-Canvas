@@ -12,7 +12,7 @@ var app = firebase.initializeApp(config);
 
 var db = firebase.firestore(app)
 
-function addPixel(x_cord, y_cord, colorHex, sizeVal) {
+function addPixel(pixel) {
     console.log("Pixel Info: (" + x_cord + ", " + y_cord + "), " + colorHex + ", " + sizeVal);
 
     // Add a new document with a generated id.
