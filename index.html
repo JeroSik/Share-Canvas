@@ -5,18 +5,30 @@
         <meta charset="UTF-8">
         <meta name="description" content="CS252 Lab 6">
         <meta name="authors" content="Vivian Guo and Youngsik Yoon">
-
         <title>Share Canvas</title>
+        <link rel="stylesheet" href="index.css">
+        <style>
+            body{}
+        </style>
     </head>
     <body>
         <div id="header">
             <h1 id="title">Share Canvas</h1>
         </div>
-        <div id="container">
+        <div id="container" class="row">
+            <div class="column" id="canvas">
             <p align="center">
                 <canvas id="mainCanvas"></canvas>
-                <input type="color" value="#000000" id="colorWell">
             </p>
+            </div>
+            <div class="column" id="options">
+                <table>
+                    <tr>
+                        <th><h2>Choose Color:</h2></th>
+                        <td><input type="color" value="#000000" id="colorWell"></td>
+                    </tr> 
+                </table>
+            </div>
         </div>
 
         <!-- Get required js files -->
