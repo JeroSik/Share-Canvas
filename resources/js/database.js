@@ -8,4 +8,23 @@ var config = {
     messagingSenderId: "356431070588"
 };
 
-firebase.initializeApp(config);
+var app = firebase.initializeApp(config);
+
+var db = firebase.firestore(app)
+
+function addPixel(x_cord, y_cord, colorHex) {
+    console.log("Pixel Info: (" + x_cord + ", " + y_cord + ") " + colorHex);
+
+    // Add a new document with a generated id.
+    db.collection("pixels").add({
+        color: colorHex,
+        x: x_cord,
+        y: y_cord
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+}

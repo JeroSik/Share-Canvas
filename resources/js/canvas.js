@@ -24,6 +24,8 @@ function drawPixel(x, y) {
     
     context.fillStyle = pixelColor;
     context.fillRect(pixelCords[0], pixelCords[1], 5, 5);
+
+    addPixel(pixelCords[0], pixelCords[1], pixelColor)
 }
 
 function getPixelCord(x, y) {

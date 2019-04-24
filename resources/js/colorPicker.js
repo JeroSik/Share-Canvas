@@ -6,6 +6,7 @@ window.addEventListener("load", startup, false);
 function startup() {
     colorWell = document.querySelector("#colorWell");
     colorWell.value = defaultColor;
+    pixelColor = defaultColor
     colorWell.addEventListener("input", updateFirst, false);
     // colorWell.addEventListener("change", updateAll, false);
     colorWell.select();
