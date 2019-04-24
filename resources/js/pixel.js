@@ -3,7 +3,7 @@ var pixelMap = [];
 
 function makePixel(x_cord, y_cord, colorHex) {
     pixelID = "(" + x_cord + "," + y_cord + ")";
-    
+
     return {
         id: pixelID,
         x: x_cord,
@@ -32,11 +32,26 @@ function getPixelSize() {
     }
 }
 
+function pixelExist(pixel) {
+    pixelMap.forEach(function(element) {
+        if (element.id == pixel.id) {
+            return true;
+        }
+    });
+    return false;
+}
+
 function splitPixels(x_cord, y_cord, colorHex, sizeVal) {
     for (var i = 0; i < (sizeVal / 5); i++) {
         for (var j = 0; j < (sizeVal / 5); j++) {
             pixel = makePixel(x_cord+5*i, y_cord+5*j, colorHex);
-            addPixel(pixel);
+
+            if (pixelExist(pixel)) {
+                updatePixel(pixel);
+            } else {
+                pixelMap.push(pixel);
+                addPixel(pixel);
+            }
         }
     } 
 }
