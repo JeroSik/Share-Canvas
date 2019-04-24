@@ -30,7 +30,8 @@ function drawCanvas(x, y) {
 
 function updateCanvas() {
     readPixels();
-    // setInterval(redrawCanvas, 5000);
+    // Update every 10 seconds
+    setInterval(redrawCanvas, 10000);
 }
 
 initCanvas();
