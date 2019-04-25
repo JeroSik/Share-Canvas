@@ -24,6 +24,7 @@ h1{
   resize: none;
 }
 table{
+    margin-top: -600px;
     width: 40%;
     position: relative;
     height: auto;
