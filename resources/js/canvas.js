@@ -66,4 +66,4 @@ function updateCanvas() {
 }
 
 initCanvas();
-updateCanvas();
+//updateCanvas();

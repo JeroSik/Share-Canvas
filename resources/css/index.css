@@ -29,9 +29,21 @@ table{
     height: auto;
 }
 th{
-    width: 400px;
+    width: auto;
     padding: 5px;
-    margin-left: 50px;
+    margin-left: 0px;
+    float:left;
+   
+}
+tr{
+    float:center;
+    width: auto;
+}
+td{
+    float:center;
+    width: auto;
+    vertical-align: center;
+    margin: 5px;
 }
 h2{
     text-transform: uppercase;
@@ -39,60 +51,6 @@ h2{
     font-size: 150%;
 }
 
-.button-container {
-    padding: 100px 0;
-    text-align: center;
-}
-.button {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 1px solid #424242;
-    background-color: #78c2ec;
-    border-radius: 4px;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-}
-.button:before {
-	 content: "";
-	 position: absolute;
-	 left: 50%;
-	 transform: translateX(-50%) scaleY(1) scaleX(1.25);
-	 top: 100%;
-	 width: 140%;
-	 height: 180%;
-	 background-color: black;
-	 border-radius: 50%;
-	 display: block;
-	 transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-	 z-index: -1;
-}
- .button:after {
-	 content: "";
-	 position: absolute;
-	 left: 55%;
-	 transform: translateX(-50%) scaleY(1) scaleX(1.45);
-	 top: 180%;
-	 width: 160%;
-	 height: 190%;
-	 background-color:  rgba(0, 0, 0, 0.05);
-	 border-radius: 50%;
-	 display: block;
-	 transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-	 z-index: -1;
-}
- .button:hover {
-	 color: #fff;
-	 border: 1px solid #fff;
-}
- .button:hover:before {
-	 top: -35%;
-	 background-color:  rgba(0, 0, 0, 0.05);
-	 transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
- .button:hover:after {
-	 top: -45%;
-	 background-color:  rgba(0, 0, 0, 0.05);
-	 transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
+
+
  
