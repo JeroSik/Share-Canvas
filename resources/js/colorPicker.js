@@ -16,6 +16,3 @@ function updateFirst(event) {
     console.log("New Color: " + event.target.value);
     pixelColor = event.target.value;
 }
-
-// Use this link for additional features
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color

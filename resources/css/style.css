@@ -1,6 +1,9 @@
-/* body {
-    background-color: lightblue;
-} */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext);
+
+body {
+    background-image: url("../images/background.png");    
+    font-family: 'Ubuntu', sans-serif;
+}
 
 #title {
     text-align: center;
@@ -8,8 +11,33 @@
 
 #container {
     margin: auto;
-    /* border: 3px solid #73AD21; */
     padding: 10px;
+}
+
+#canvas {
+    margin-left: 30%;
+    width: 650px;
+}
+
+.column {
+    float: left;
+    display: inline-block;
+    justify-content: center;
+}
+
+#options {
+    width: 20%;
+}
+
+#sizeList {
+    height: 50px;
+    width: 100px;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(204, 204, 204);
+    resize: none;
 }
 
 canvas {

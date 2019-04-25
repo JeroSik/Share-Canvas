@@ -12,31 +12,43 @@ var app = firebase.initializeApp(config);
 
 var db = firebase.firestore(app)
 
-function addPixel(x_cord, y_cord, colorHex) {
-    console.log("Pixel Info: (" + x_cord + ", " + y_cord + ") " + colorHex);
-
+function addPixel(pixel) {
     // Add a new document with a generated id.
-    db.collection("pixels").add({
-        color: colorHex,
-        x: x_cord,
-        y: y_cord
+    db.collection("pixels").doc(pixel.id).set({
+        color: pixel.color,
+        x: pixel.x,
+        y: pixel.y
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
+    .then(function() {
+        console.log("Document successfully written!");
     })
     .catch(function(error) {
-        console.error("Error adding document: ", error);
+        console.error("Error writing document: ", error);
+    });
+}
+
+function updatePixel(pixel) {
+    var pixelRef = db.collection("pixels").doc("pixel.id");
+
+    // Set the "capital" field of the city 'DC'
+    return pixelRef.update({
+        color: pixel.color
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        console.error("Error updating document: ", error);
     });
 }
 
 function readPixels() {
+    pixelMap = [];
+
     db.collection("pixels").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             pixelData = doc.data();
-            // console.log(doc.id, " => ", doc.data());
-
-            context.fillStyle = pixelData.color;
-            context.fillRect(pixelData.x, pixelData.y, 5, 5);
+            pixelMap.push(pixelData);
         });
     });
 }
