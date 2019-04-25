@@ -18,15 +18,20 @@
         
         <!-- Main -->
         <div id="container" class="row">
+            <!-- Canvas -->
             <div class="column" id="canvas" align="center">
                 <canvas id="mainCanvas"></canvas>
             </div>
+
+            <!-- Option Panel -->
             <div class="column" id="options">
                 <table id="tble">
+                    <!-- Color Picker -->
                     <tr>
                         <th><h2>Choose Color:</h2></th>
                         <td><input type="color" value="#000000" id="colorWell"></td>
                     </tr>
+                    <!-- Size Picker -->
                     <tr>
                         <th><h2>Choose Size:</h2></th>
                         <td>
@@ -38,10 +43,12 @@
                             </select>
                         </td>
                     </tr>
+                    <!-- Draw Timer -->
                     <tr>
                         <th><h2>Draw Cooldown:</h2></th>
                         <td><p id="drawTimer">READY!</p></td>
                     </tr>
+                    <!-- Refresh Timer -->
                     <tr>
                         <th><h2>Refresh Timer:</h2></th>
                         <td><p id="refreshTimer">5s</p></td>
