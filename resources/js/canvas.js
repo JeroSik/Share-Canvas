@@ -1,5 +1,6 @@
 var canvas;
 var context;
+var drawLock = false;
 
 function initCanvas() {
     canvas = document.getElementById("mainCanvas")
@@ -11,9 +12,28 @@ function initCanvas() {
     $("#mainCanvas").mousedown(function(e){
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
-
-        drawCanvas(mouseX, mouseY);
+        
+        if (!drawLock) {
+            drawCanvas(mouseX, mouseY);
+            lockCanvas();
+        }
     });
+}
+
+function lockCanvas() {
+    var seconds = 10;
+
+    var x = setInterval(function() {
+        drawLock = true;
+        document.getElementById("drawTimer").innerHTML = seconds + "s";
+
+        // If the count down is over, write some text 
+        if (seconds-- <= 0) {
+            clearInterval(x);
+            drawLock = false;
+            document.getElementById("drawTimer").innerHTML = "READY";
+        }
+    }, 1000);
 }
 
 function drawCanvas(x, y) {
@@ -30,8 +50,19 @@ function drawCanvas(x, y) {
 
 function updateCanvas() {
     readPixels();
-    // Update every 10 seconds
-    setInterval(redrawCanvas, 10000);
+
+    // Update every 6 seconds
+    setInterval(function() {
+        var seconds = 5;
+        var x = setInterval(function() {
+            document.getElementById("refreshTimer").innerHTML = seconds + "s";
+            if (seconds-- <= 0) {
+                clearInterval(x);
+                document.getElementById("refreshTimer").innerHTML = "Refreshed!";
+            }
+        }, 1000);
+        readPixels();
+    }, 6000);
 }
 
 initCanvas();

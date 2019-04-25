@@ -20,7 +20,7 @@ function addPixel(pixel) {
         y: pixel.y
     })
     .then(function() {
-        console.log("Document successfully written!");
+        // console.log("Document successfully written!");
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
@@ -35,7 +35,7 @@ function updatePixel(pixel) {
         color: pixel.color
     })
     .then(function() {
-        console.log("Document successfully updated!");
+        // console.log("Document successfully updated!");
     })
     .catch(function(error) {
         console.error("Error updating document: ", error);
@@ -44,6 +44,7 @@ function updatePixel(pixel) {
 
 function readPixels() {
     pixelIDMap = [];
+    console.log("READING PIXELS");
 
     db.collection("pixels").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {

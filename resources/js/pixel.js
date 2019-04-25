@@ -47,7 +47,6 @@ function splitPixels(x_cord, y_cord, colorHex, sizeVal) {
             pixel = makePixel(x_cord+5*i, y_cord+5*j, colorHex);
 
             if (pixelIDExist(pixel.id)) {
-                console.log("updated!");
                 updatePixel(pixel);
             } else {
                 pixelIDMap.push(pixel.id);
