@@ -44,7 +44,7 @@ function updateCanvas() {
     readPixels();
 }
 
-function redraw(){
+function clear(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 }
 
