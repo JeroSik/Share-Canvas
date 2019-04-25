@@ -1,5 +1,5 @@
 # Share-Canvas
-An art based web application that allows users to all draw pixel art on one canvas. During lab 6 of CS 25200 Spring 2019, our group focused on creating a platform where a community can work together to express their creativity through pixels.
+An art based web application that allows users to all draw pixel art on one canvas. During lab 6 of CS 25200 Spring 2019, our group focused on creating a platform where a community can work together to express their creativity through pixels. See also the [presentation](https://docs.google.com/presentation/d/1P97DYi8oPv9WlyLbSk1aWVNysDpXq2ktMA6_V9mf8m0/edit?usp=sharing) for this project.
 
 ## Built With
 * [Cloud Firestore](https://firebase.google.com/docs/firestore/) - A flexible, scalable database for web and server development.
